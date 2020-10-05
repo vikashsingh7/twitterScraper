@@ -17,7 +17,7 @@ Setup for Spring Boot BackEnd:
 
 Setup for Database Operation:
 1. Create a user with Username and password as "twitterApp" or create a new Schema and generate your own username and passwords(make sure to include them in application.properties) in the spring-boot app.
-2. Run the DataBaseScripts.script file to generate tables.
+2. Run the DataBaseScripts.sql file to generate tables.
 
 
 A Free Template is used for FrontEnd to make the design process faster and for further enhancements.
