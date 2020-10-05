@@ -12,7 +12,7 @@ Setup for Spring Boot BackEnd:
 1. Import the project.
 2. Replace Dummy Values for Twitter API tokens recieved earlier with values(Bearer Token is enough for now as all the processes require OAuth 2.0).
 3. Enter Credentials for MYSQL Datatbase in applicatio.properties.
-3. Install all the dependencies present in Maven file(mvn install).
+3. Install all the dependencies present in pom.xml file(mvn install).
 4. Start the server.
 
 Setup for Database Operation:
