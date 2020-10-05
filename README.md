@@ -22,3 +22,14 @@ Setup for Database Operation:
 
 A Free Template is used for FrontEnd to make the design process faster and for further enhancements.
 The template is free under MIT license("https://github.com/creativetimofficial/paper-kit-2/blob/bootstrap4-development/LICENSE").
+
+
+Way to Test:
+After everything is up and running, launch the frontend at localhost:4200/.
+The landing screen has Select Box with available functionalties.
+Select the First or Second option from the Select box, a new section will appear.
+1.  For the first option, Enter a Twitter UserId to fetch the timeline.
+    (PLEASE ENTER USERID WITHOUT "@", preferably all texts. for eg., "mkbhd")
+    Clicking on the button will fetch that User's timeline.
+2. For the second option, Enter a hashtag you want to search(PLEASE ENTER WITHOUT "#")
+   Clicking on the button will fetch latest tweets mentioning the hashtag.
