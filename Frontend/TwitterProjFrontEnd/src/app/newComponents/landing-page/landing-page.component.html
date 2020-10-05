@@ -1,0 +1,74 @@
+<div class="wrapper">
+  <div
+    class="page-header"
+    style="background-image: url('./assets/img/bg-5.jpg')"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+          <div class="card-login">
+            <h3 class="title text-center">Welcome !</h3>
+            <form
+              [formGroup]="loginForm"
+              (ngSubmit)="onSubmit(loginForm.value)"
+              class="login-form"
+            >
+              <label style="color: black">Email</label>
+              <div class="input-group form-group-no-border">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="nc-icon nc-email-85"></i>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control form-control-danger"
+                  placeholder="Email"
+                  formControlName="emailId"
+                />
+              </div>
+              <br />
+              <label style="color: black">Password</label>
+              <div class="input-group form-group-no-border">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="nc-icon nc-key-25"></i>
+                  </span>
+                </div>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                  formControlName="password"
+                />
+              </div>
+              <div class="login-btn-style">
+                <button class="btn btn-danger btn-round" type="submit">
+                  Login
+                </button>
+                <br />
+                <a [routerLink]="['/bodyData']" class="btn btn-link btn-danger"
+                  >NEXT PAGE</a
+                >
+              </div>
+            </form>
+            <div class="text-center">
+              <a [routerLink]="['/register']" class="btn btn-link btn-danger"
+                >Forgot Password?</a
+              >
+            </div>
+            <div class="signUp-prompt-style">
+              <p>
+                New here?<a
+                  [routerLink]="['/signup']"
+                  class="btn btn-link btn-danger"
+                  >Sign Up</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

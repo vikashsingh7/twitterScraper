@@ -1,0 +1,39 @@
+#sel {
+  width: 300px;
+  height: 40px;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+/*700px width for example*/
+
+#sel option {
+  text-align: center;
+  width: 700px; /*default would be inherit*/
+  height: 60px; /*just changed for example*/
+}
+
+.table-responsive {
+  padding-top: 50px;
+  width: 800px;
+}
+
+// table {
+//   border: 1px solid black;
+//   border-collapse: collapse;
+//   padding-top: 25px;
+// }
+th {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+td {
+  padding: 15px;
+  text-align: center;
+}
+
+#id,
+option {
+  text-align: center;
+}

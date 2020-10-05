@@ -1,0 +1,168 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row" style="padding-top: 75px">
+      <div class="col-md-8 mr-auto ml-auto">
+        <h2 class="text-center">Fetch Tweets</h2>
+        <form
+          class="contact-form"
+          [formGroup]="optionValue"
+          (ngSubmit)="onSubmit(optionValue.value, myDropDown)"
+        >
+          <!-- <div class="row"> -->
+          <div class="col-md-6 mr-auto ml-auto">
+            <label>Select:</label>
+            <select
+              id="sel"
+              [(ngModel)]="myDropDown"
+              (ngModelChange)="onChangeofOptions($event)"
+              [ngModelOptions]="{ standalone: true }"
+            >
+              <option value="User_Timeline">Fetch User Timeline</option>
+              <option value="Fetch_Tweets">Follow HashTags</option>
+              <option value="Stream_Operations">Filter Realtime Tweets</option>
+            </select>
+          </div>
+
+          <!-- -------------First Part----------- -->
+          <div
+            class="col-md-6 mr-auto ml-auto"
+            *ngIf="myDropDown == 'User_Timeline'"
+          >
+            <label>Enter Twitter Id:</label>
+            <div
+              class="input-group"
+              [ngClass]="{ 'input-group-focus': focus === true }"
+            >
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="nc-icon nc-single-02"></i
+                ></span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="twitterId"
+                (focus)="focus = true"
+                (blur)="focus = false"
+                placeholder="{{ myDropDown }}"
+              />
+            </div>
+            <!-- <div *ngIf="myDropDown == 'Stream_Operations'"></div> -->
+            <!-- </div> -->
+            <div class="row">
+              <div class="mr-auto ml-auto">
+                <button class="btn btn-danger btn-lg btn-fill">
+                  Send Request
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- -------------Second Part----------- -->
+          <div
+            class="col-md-6 mr-auto ml-auto"
+            *ngIf="myDropDown == 'Fetch_Tweets'"
+          >
+            <label>Enter HashTag:</label>
+            <div
+              class="input-group"
+              [ngClass]="{ 'input-group-focus': focus === true }"
+            >
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="nc-icon nc-single-02"></i
+                ></span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="hashTag"
+                (focus)="focus = true"
+                (blur)="focus = false"
+                placeholder="{{ myDropDown }}"
+              />
+            </div>
+            <!-- <div *ngIf="myDropDown == 'Stream_Operations'"></div> -->
+            <!-- </div> -->
+            <div class="row">
+              <div class="mr-auto ml-auto">
+                <button class="btn btn-danger btn-lg btn-fill">
+                  Send Request
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- -------------Third Part----------- -->
+          <div *ngIf="myDropDown == 'Stream_Operations'">
+            <div style="align-items: center">
+              <div
+                style="display: inline-block; padding: 20px"
+                class="col-md-6"
+              >
+                <label>Keyword to Track:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="keyword"
+                  (focus)="focus = true"
+                  (blur)="focus = false"
+                  placeholder="KeyWord to Track"
+                />
+              </div>
+
+              <div
+                style="display: inline-block; padding: 20px"
+                class="col-md-6"
+              >
+                <label>Tag Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="tagName"
+                  (focus)="focus = true"
+                  (blur)="focus = false"
+                  placeholder="Tag Name(Optional)"
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 mr-auto ml-auto">
+                <button class="btn btn-danger btn-lg btn-fill" disabled>
+                  Post Request
+                </button>
+                <p>(Future Release)</p>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div *ngIf="tweets" class="col-sm-3">
+          <table class="table-responsive">
+            <tr>
+              <th>Tweet Id</th>
+              <th>Tweet Text</th>
+              <th>Created At</th>
+            </tr>
+            <tr *ngFor="let temp of tweets">
+              <td>
+                {{ temp.id }}
+              </td>
+              <td>
+                {{ temp.tweetText }}
+              </td>
+
+              <td>
+                {{ temp.createdAt }}
+              </td>
+            </tr>
+          </table>
+          <!-- <p class="card-text">
+            {{ temp.tweetText }}
+          </p>
+          <p>{{ temp.idStr }}</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
