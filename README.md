@@ -24,7 +24,7 @@ A Free Template is used for FrontEnd to make the design process faster and for f
 The template is free under MIT license("https://github.com/creativetimofficial/paper-kit-2/blob/bootstrap4-development/LICENSE").
 
 
-Way to Test:
+Reviewer Instructios:
 After everything is up and running, launch the frontend at localhost:4200/.
 The landing screen has Select Box with available functionalties.
 Select the First or Second option from the Select box, a new section will appear.
